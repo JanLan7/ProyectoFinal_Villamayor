@@ -51,6 +51,10 @@ document.addEventListener("DOMContentLoaded", function() {
             li.textContent = item;
             listaCarrito.appendChild(li);
         });
+        let total = carrito.length * 1;
+        let totalElement = document.createElement("li");
+        totalElement.textContent = `Total: $${total}`;
+        listaCarrito.appendChild(totalElement);
     }
 
     function eliminarCarrito() {
@@ -89,11 +93,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function pagarConCrypto() {
         Swal.fire({
-            title: 'Ingrese su dirección de criptomoneda',
-            input: 'text',
-            inputPlaceholder: 'Dirección de criptomoneda',
+            title: 'Realice el pago a esta wallet:',
+            html: '<p>Dirección de ETH: 0x1234567890abcdef1234567890abcdef12345678</p>',
             showCancelButton: true,
-            confirmButtonText: 'Pagar',
+            confirmButtonText: 'He realizado el pago',
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.value) {
@@ -137,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                let total = carrito.length * 5;
+                let total = carrito.length * 1;
                 Swal.fire("Gracias por su compra!", `Ha comprado ${carrito.length} frases como NFT. Total: $${total}`, "success");
                 carrito = [];
                 mostrarCarrito();
