@@ -138,21 +138,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function pagarConTarjeta() {
         Swal.fire({
-            title: 'Ingrese los datos de su tarjeta de crédito',
+            title: 'Datos de tarjeta',
             html: `
-                <input type="text" id="numeroTarjeta" class="swal2-input" placeholder="Número de tarjeta">
-                <input type="text" id="fechaExpiracion" class="swal2-input" placeholder="Fecha de expiración">
-                <input type="text" id="cvv" class="swal2-input" placeholder="CVV">
+                <div style="padding: 10px;">
+                    <input type="text" id="numeroTarjeta" class="swal2-input" placeholder="Número de tarjeta">
+                    <input type="text" id="fechaExpiracion" class="swal2-input" placeholder="MM/AA">
+                    <input type="text" id="cvv" class="swal2-input" placeholder="CVV">
+                </div>
             `,
             showCancelButton: true,
             confirmButtonText: 'Pagar',
             cancelButtonText: 'Cancelar',
+            customClass: {
+                container: 'position-fixed',
+                popup: 'swal-mobile'
+            },
             preConfirm: () => {
                 const numeroTarjeta = Swal.getPopup().querySelector('#numeroTarjeta').value;
                 const fechaExpiracion = Swal.getPopup().querySelector('#fechaExpiracion').value;
                 const cvv = Swal.getPopup().querySelector('#cvv').value;
                 if (!numeroTarjeta || !fechaExpiracion || !cvv) {
-                    Swal.showValidationMessage('Por favor, complete todos los campos');
+                    Swal.showValidationMessage('Complete todos los campos');
                 }
                 return { numeroTarjeta, fechaExpiracion, cvv };
             }
