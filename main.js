@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Controles de audio
+    const toggleAudio = document.getElementById('toggleAudio');
+    const volumeControl = document.getElementById('volumeControl');
+    const audioPlayer = document.getElementById('audioPlayer');
+    let isMuted = false;
+
+    toggleAudio.addEventListener('click', function() {
+        if (isMuted) {
+            audioPlayer.muted = false;
+            toggleAudio.innerHTML = '<i class="fas fa-volume-up"></i>';
+            isMuted = false;
+        } else {
+            audioPlayer.muted = true;
+            toggleAudio.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            isMuted = true;
+        }
+    });
+
+    volumeControl.addEventListener('input', function() {
+        audioPlayer.volume = this.value;
+        if (this.value == 0) {
+            toggleAudio.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            isMuted = true;
+            audioPlayer.muted = true;
+        } else {
+            toggleAudio.innerHTML = '<i class="fas fa-volume-up"></i>';
+            isMuted = false;
+            audioPlayer.muted = false;
+        }
+    });
+
     let frasesSesion = [];
 
     document.getElementById("botonCita").addEventListener("click", function() {
@@ -353,4 +384,17 @@ document.addEventListener("DOMContentLoaded", function() {
         audioPlayer.load();
         audioPlayer.play();
     }
+
+    volumeControl.addEventListener('input', function() {
+        audioPlayer.volume = this.value;
+        if (this.value == 0) {
+            toggleAudio.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            isMuted = true;
+            audioPlayer.muted = true;  // Agregar esta línea
+        } else {
+            toggleAudio.innerHTML = '<i class="fas fa-volume-up"></i>';
+            isMuted = false;
+            audioPlayer.muted = false; // Agregar esta línea
+        }
+    });
 });

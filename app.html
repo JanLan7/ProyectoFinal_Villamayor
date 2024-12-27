@@ -13,35 +13,32 @@
         <header class="bg-black text-white text-center py-3 custom-header"><br>
             <h1 class="h1 text-center ">Frases & Cultura</h1>
             <p class="lead">Descubre citas, libros, música y humor</p>
+            <!-- Agregar controles de audio -->
+            <div class="audio-controls">
+                <button class="btn btn-light btn-sm" id="toggleAudio">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <input type="range" class="form-range mx-2" id="volumeControl" min="0" max="1" step="0.1" value="1" style="width: 100px;">
+            </div>
         </header><br>
        
         <button class="btn btn-primary " id="botonCita">Cita Filosófica</button>
         <p class="lead" id="cita"></p>
-        <audio id="audioPlayer" controls class="d-none">
-            <source id="audioSource" src="meditaZAO.mp3" type="audio/mpeg">
+        
+        <!-- Reemplazar todos los elementos de audio por uno solo -->
+        <audio id="audioPlayer" class="d-none">
+            <source id="audioSource" src="" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
 
         <button class="btn btn-primary" id="botonLibros">Descubrir Libro</button>
         <p class="lead" id="librosSe"></p>
-        <audio id="audioPlayer" controls class="d-none">
-            <source id="audioSource" src="Page.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
 
         <button class= "btn btn-primary" id="botonChistes">Chiste Random</button>
         <p class="lead" id="Ch"></p>
-        <audio id="audioPlayer" controls class="d-none">
-            <source id="audioSource" src="chistedrum.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
 
         <button class="btn btn-primary" id="botonDiscos">Discos del Día</button>
         <p class="lead" id="discosS"></p>
-        <audio id="audioPlayer" controls class="d-none">
-            <source id="audioSource" src="vinyl.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
         <button class="btn btn-secondary" id="botonImprimir">Ver Historial</button>
         <ul id="ultimasFrases"></ul>
     </div>
