@@ -28,5 +28,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // ... resto del código existente ...
+   
 });

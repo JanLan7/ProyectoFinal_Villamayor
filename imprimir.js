@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (this.value == 0) {
             toggleAudio.innerHTML = '<i class="fas fa-volume-mute"></i>';
             isMuted = true;
-            audioPlayer.muted = true;  // Agregar esta línea
+            audioPlayer.muted = true;  
         } else {
             toggleAudio.innerHTML = '<i class="fas fa-volume-up"></i>';
             isMuted = false;
-            audioPlayer.muted = false; // Agregar esta línea
+            audioPlayer.muted = false; 
         }
     });
 

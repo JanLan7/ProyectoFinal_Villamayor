@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("botonCita").addEventListener("click", function() {
         let cita = citaFilosofica();
         document.getElementById("cita").innerText = cita;
-        // document.getElementById("mongex").classList.remove("d-none");
         reproducirAudio("meditaZAO.mp3");
         guardarFrase(cita);
     });
@@ -43,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("botonLibros").addEventListener("click", function() {
         let librosSe = librosSeleccion();
         document.getElementById("librosSe").innerText = librosSe;
-        // document.getElementById("librox").classList.remove("d-none");
         reproducirAudio("Page.mp3");
         guardarFrase(librosSe);
     });
@@ -51,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("botonChistes").addEventListener("click", function() {
         let chistesS = chistesSeleccion();
         document.getElementById("Ch").innerText = chistesS;
-        // document.getElementById("chistex").classList.remove("d-none");
         reproducirAudio("chistedrum.mp3");
         guardarFrase(chistesS);
     });
@@ -59,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("botonDiscos").addEventListener("click", function() {
         let discosS = discosSeleccion();
         document.getElementById("discosS").innerText = discosS;
-        // document.getElementById("discox").classList.remove("d-none");
         reproducirAudio("vinyl.mp3");
         guardarFrase(discosS);
     });
@@ -390,11 +386,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (this.value == 0) {
             toggleAudio.innerHTML = '<i class="fas fa-volume-mute"></i>';
             isMuted = true;
-            audioPlayer.muted = true;  // Agregar esta línea
+            audioPlayer.muted = true;  
         } else {
             toggleAudio.innerHTML = '<i class="fas fa-volume-up"></i>';
             isMuted = false;
-            audioPlayer.muted = false; // Agregar esta línea
+            audioPlayer.muted = false; 
         }
     });
 });
